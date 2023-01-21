@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 const cors = require("cors");
+//try using pool. 
 const pool = require("./db");
 const postgres = require('./postgres.js');
 
@@ -11,7 +12,7 @@ app.use(cors());
 //routes
 
 //create a fighter
-
+//Tried using async, try, and catch. Had issues in postman, reverted back to 
 // app.post("/fighters", async(req,res) => {
 //     try{ 
 //         const { name, nickname , country, age , weightclass, record, imgUrl } = req.body;      
@@ -65,6 +66,6 @@ app.delete('/fighter/:id', (req, res) => {
 
 postgres.connect();
 
-app.listen(3000, () => {
-    console.log("server has started on port 3000");
-}); 
+// app.listen(3000, () => {
+//     console.log("server has started on port 3000");
+// }); 
